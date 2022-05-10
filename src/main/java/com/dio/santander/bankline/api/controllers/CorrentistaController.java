@@ -1,4 +1,4 @@
-package com.dio.santander.bankline.api.controller;
+package com.dio.santander.bankline.api.controllers;
 
 import java.util.List;
 
@@ -11,15 +11,15 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.dio.santander.bankline.api.dto.NovoCorrentista;
 import com.dio.santander.bankline.api.model.Correntista;
-import com.dio.santander.bankline.api.repository.CorrentistaRespository;
-import com.dio.santander.bankline.api.service.CorrentistaService;
+import com.dio.santander.bankline.api.repository.CorrentistaRepository;
+import com.dio.santander.bankline.api.services.CorrentistaService;
 
 @RestController
 @RequestMapping("/correntistas")
 public class CorrentistaController {
 	
 	@Autowired
-	private CorrentistaRespository repository;
+	private CorrentistaRepository repository;
 	
 	@Autowired
 	private CorrentistaService service;
@@ -33,5 +33,4 @@ public class CorrentistaController {
 	public void save(@RequestBody NovoCorrentista correntista) {
 		service.save(correntista);
 	}
-
 }

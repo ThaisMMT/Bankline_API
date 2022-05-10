@@ -1,5 +1,6 @@
 package com.dio.santander.bankline.api.model;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 import javax.persistence.Column;
@@ -20,8 +21,7 @@ public class Movimentacao {
 	private Integer id;
 	
 	@Column(name = "data_hora")
-	private LocalDateTime dataHora;
-	
+	private LocalDate dataHora;
 	private String descricao;
 	private Double valor;
 	
@@ -29,7 +29,7 @@ public class Movimentacao {
 	private MovimentacaoTipo tipo;
 	
 	@Column(name = "id_conta")
-	private Integer IdConta;
+	private Integer idConta;
 	
 	public Integer getId() {
 		return id;
@@ -37,10 +37,10 @@ public class Movimentacao {
 	public void setId(Integer id) {
 		this.id = id;
 	}
-	public LocalDateTime getDataHora() {
+	public LocalDate getDataHora() {
 		return dataHora;
 	}
-	public void setDataHora(LocalDateTime dataHora) {
+	public void setDataHora(LocalDate dataHora) {
 		this.dataHora = dataHora;
 	}
 	public String getDescricao() {
@@ -62,12 +62,10 @@ public class Movimentacao {
 		this.tipo = tipo;
 	}
 	public Integer getIdConta() {
-		return IdConta;
+		return idConta;
 	}
 	public void setIdConta(Integer idConta) {
-		IdConta = idConta;
+		this.idConta = idConta;
 	}
-
 	
-
 }

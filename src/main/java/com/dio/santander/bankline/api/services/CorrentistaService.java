@@ -1,4 +1,4 @@
-package com.dio.santander.bankline.api.service;
+package com.dio.santander.bankline.api.services;
 
 import java.util.Date;
 
@@ -8,20 +8,21 @@ import org.springframework.stereotype.Service;
 import com.dio.santander.bankline.api.dto.NovoCorrentista;
 import com.dio.santander.bankline.api.model.Conta;
 import com.dio.santander.bankline.api.model.Correntista;
-import com.dio.santander.bankline.api.repository.CorrentistaRespository;
+import com.dio.santander.bankline.api.repository.CorrentistaRepository;
 
 @Service
 public class CorrentistaService {
+	
 	@Autowired
-	private CorrentistaRespository repository;
+	private CorrentistaRepository repository;
 	public void save(NovoCorrentista novoCorrentista) {
 		Correntista correntista = new Correntista();
 		correntista.setCpf(novoCorrentista.getCpf());
-		correntista.setNome(correntista.getNome());;
+		correntista.setNome(novoCorrentista.getNome());
 		
 		Conta conta = new Conta();
-		conta.setSaldo(0.0);
 		conta.setNumero(new Date().getTime());
+		conta.setSaldo(0.0);
 		
 		correntista.setConta(conta);
 		repository.save(correntista);

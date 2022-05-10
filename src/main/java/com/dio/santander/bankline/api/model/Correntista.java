@@ -5,36 +5,37 @@ import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
-import javax.persistence.Table;
 import javax.persistence.Id;
+import javax.persistence.Table;
+
 @Entity
 @Table(name = "tab_correntista")
 public class Correntista {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer Id;
+	private Integer id;
 	@Column(length = 20)
 	private String cpf;
 	@Column(length = 60)
 	private String nome;
-	public Integer getId() {
-		return Id;
-	}
 	
 	@Embedded
 	private Conta conta;
 	
-	public void setConta(Conta conta) {
-		this.conta = conta;
-	}
-
 	public Conta getConta() {
 		return conta;
 	}
 	
+	public void setConta(Conta conta) {
+		this.conta = conta;
+	}
+	
+	public Integer getId() {
+		return id;
+	}
 	public void setId(Integer id) {
-		Id = id;
+		this.id = id;
 	}
 	public String getCpf() {
 		return cpf;
@@ -47,6 +48,6 @@ public class Correntista {
 	}
 	public void setNome(String nome) {
 		this.nome = nome;
-	} 
-
+	}
+	
 }

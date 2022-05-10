@@ -7,10 +7,8 @@ import javax.persistence.Embeddable;
 public class Conta {
 	@Column(name = "conta_numero")
 	private Long numero;
-	
 	@Column(name = "conta_saldo")
 	private Double saldo;
-	
 	
 	public Long getNumero() {
 		return numero;
@@ -24,7 +22,5 @@ public class Conta {
 	public void setSaldo(Double saldo) {
 		this.saldo = saldo;
 	}
-	
-	
 	
 }

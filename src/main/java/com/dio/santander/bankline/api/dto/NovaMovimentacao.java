@@ -7,7 +7,6 @@ public class NovaMovimentacao {
 	private Double valor;
 	private MovimentacaoTipo tipo;
 	private Integer idConta;
-
 	
 	public String getDescricao() {
 		return descricao;
@@ -33,4 +32,5 @@ public class NovaMovimentacao {
 	public void setIdConta(Integer idConta) {
 		this.idConta = idConta;
 	}
+	
 }

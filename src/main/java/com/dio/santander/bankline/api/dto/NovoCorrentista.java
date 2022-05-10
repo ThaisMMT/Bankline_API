@@ -1,9 +1,9 @@
 package com.dio.santander.bankline.api.dto;
 
 public class NovoCorrentista {
-	
 	private String nome;
 	private String cpf;
+	
 	public String getNome() {
 		return nome;
 	}
@@ -16,5 +16,5 @@ public class NovoCorrentista {
 	public void setCpf(String cpf) {
 		this.cpf = cpf;
 	}
-
+	
 }
